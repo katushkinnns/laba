@@ -1,4 +1,5 @@
-# Задание 1
+Задание 1
+print("Задание 1")
 user_input = input('Введите текст: ')
 
 english_alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
@@ -43,7 +44,8 @@ for i in range(len(user_input)):
 print(f'Кол-во слов текста, которые начинаются с гласной буквы равно: {count}')
 
 
-#Задание 2
+Задание 2
+print("Задание 2")
 text = input('Введите текст: ')
 numbers = '1234567890.-'
 
@@ -63,13 +65,14 @@ first_numbers = ""
 is_float = False
 is_negative = False
 
-for i, char in enumerate(text):
+i = 0
+while i < len(text):
+    char = text[i]
     if char in '0123456789':
         first_numbers += char
     elif char == '-' and (i == 0 or text[i - 1] in ' ,'):
         is_negative = True
     elif char == '.' and not is_float:
-        first_numbers += char
         is_float = True
     else:
         if first_numbers:
@@ -79,11 +82,14 @@ for i, char in enumerate(text):
                 number = int(first_numbers)
 
             if is_negative:
+                number = -number
                 is_negative = False
 
             numbers_lst.append(number)
             first_numbers = ""
             is_float = False
+
+    i += 1
 
 if first_numbers:
     if is_float:
@@ -99,10 +105,10 @@ if first_numbers:
 print("Найденные числа:", numbers_lst)
 
 
-# Задание 3
+Задание 3
 import random
 from random import randint
-
+print("Задание 2")
 while True:
     try:
         size = int(input('Введите размер списка: '))
@@ -120,11 +126,11 @@ first_index = -1
 second_index = -1
 for i in range(len(random_list)):
     if random_list[i] > 0:
-        if first_index == -1:
-            first_index = i
-        elif second_index == -1:
-            second_index = i
-            break
+        if first_index==-1:
+            first_index=i
+        if second_index==-1:
+            second_index=i
+
 
 if first_index != -1 and second_index != -1 and second_index > first_index + 1:
     res = 0
